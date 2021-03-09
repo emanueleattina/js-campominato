@@ -12,7 +12,7 @@ do
 
   if (diff > 3 || diff < 1 || (isNaN(diff)))
   {
-    alert("Inserisci la difficoltà corretta");
+    alert("Inserisci una difficoltà valida");
   }
 } while(diff > 3 || diff < 1 || (isNaN(diff)));
 
@@ -47,6 +47,32 @@ while (arrayBomba.length < 16)
   }
 }
 console.log(arrayBomba);
+
+
+// TODO chiedere all'utente di inserire max - 16 numeri
+
+var arrayPrato = [];
+var prato;
+
+for (i = 0; i < (max - 16); i++)
+{
+  prato = prompt("Inserisci un numero: ");
+  if (!arrayPrato.includes(prato))
+  {
+    arrayPrato.push(prato);
+  }
+}
+
+console.log(prato);
+console.log(arrayPrato);
+
+
+
+
+
+
+
+
 
 
 
