@@ -13,10 +13,16 @@ console.log(max);
 var arrayBomba = creaBombe();
 console.log(arrayBomba);
 
+// richiamo la funzione con il gioco
+var risultato = controlloBomba(arrayBomba, max);
+console.log(risultato);
 
+alert("GAME OVER!");
+alert("Hai totalizzato "+ risultato +" punti!")
 
 /* FUNZIONI */
 
+// funzione per determinare la difficolta 1 2 3
 function selezionaDifficolta()
 {
   do
@@ -32,7 +38,7 @@ function selezionaDifficolta()
   switch (diff)
   {
     case 1:
-      max = 20;
+      max = 100;
       break;
 
     case 2:
@@ -49,6 +55,7 @@ function selezionaDifficolta()
   return max;
 }
 
+// funzione per generare un numero random
 function numeroRandom(min, max)
 {
   return Math.floor(Math.random() * max) + min;
@@ -66,18 +73,19 @@ function creaBombe()
       arrayBomba.push(bomba);
     }
   }
-  console.log(arrayBomba);
+  return arrayBomba;
 }
 
-function controlloBomba (arrayBomba, arrayPrato, max)
+
+function controlloBomba (arrayBomba, max)
 {
   var arrayPrato = [];
   var prato;
 
-  while(arrayPrato.length < max - 16)
+  while(arrayPrato.length < 16)
   {
     prato = parseInt(prompt("Inserisci un numero: "));
-    if (!isNaN(prato) && prato >= 1 && prato <= 100 && !arrayPrato.includes(prato))
+    if (!isNaN(prato) && prato >= 1 && prato <= max && !arrayPrato.includes(prato))
     {
       if (!arrayBomba.includes(prato))
       {
