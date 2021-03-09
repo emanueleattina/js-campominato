@@ -9,6 +9,7 @@
 var max = selezionaDifficolta();
 console.log(max);
 
+// richiamo la funzione per l'array di bombe
 var arrayBomba = creaBombe();
 console.log(arrayBomba);
 
